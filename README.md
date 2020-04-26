@@ -2,8 +2,8 @@
 
 Time Alignment Measurement (TAM) is a novel time series distance able to deliver information in the temporal domain, by measuring the ammount of temporal distortion between time series.
 
-
-In order to use our proposed measurement please cite the following: Folgado, Duarte, et al. "Time Alignment Measurement for Time Series." Pattern Recognition 81 (2018): 268-279.
+#### Citing
+In order to use our proposed measurement please cite the following: Folgado, Duarte, et al. "Time Alignment Measurement for Time Series." Pattern Recognition 81 (2018): 268-279. (https://www.sciencedirect.com/science/article/pii/S0031320318301286)
 
 #### This repository provides two main contribuctions:
 - **Code**: Python implementation of TAM.
