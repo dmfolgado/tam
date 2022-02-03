@@ -1,6 +1,8 @@
-import pylab as pl
 import numpy as np
 
+def find(condition):
+    res, = np.nonzero(np.ravel(condition))
+    return res
 
 def tam(path, report='full'):
     """
@@ -19,11 +21,11 @@ def tam(path, report='full'):
 
     """
     # Delay and advance counting
-    delay = len(pl.find(np.diff(path[0]) == 0))
-    advance = len(pl.find(np.diff(path[1]) == 0))
+    delay = len(find(np.diff(path[0]) == 0))
+    advance = len(find(np.diff(path[1]) == 0))
 
     # Phase counting
-    incumbent = pl.find((np.diff(path[0]) == 1) * (np.diff(path[1]) == 1))
+    incumbent = find((np.diff(path[0]) == 1) * (np.diff(path[1]) == 1))
     phase = len(incumbent)
 
     # Estimated and reference time series duration.
