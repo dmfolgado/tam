@@ -1,7 +1,7 @@
 import numpy as np
 import pylab as pl
 import scipy.interpolate as it
-
+import seaborn as sns
 
 # Auxiliary functions
 def get_mirror(s, ws):
