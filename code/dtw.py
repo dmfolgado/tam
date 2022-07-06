@@ -1,7 +1,7 @@
 import numpy as np
 import pylab as pl
 import scipy.interpolate as it
-
+import seaborn as sns
 
 # Auxiliary functions
 def get_mirror(s, ws):
@@ -84,8 +84,8 @@ def dtw(x, y, dist=lambda a, b: (a - b) ** 2, **kwargs):
     ac[1:, 0] = np.inf
     tmp_ac = ac[1:, 1:]
 
-    for i in xrange(xl):
-        for j in xrange(yl):
+    for i in range(xl):
+        for j in range(yl):
             # No window selected
             if window is None:
                 tmp_ac[i, j] = dist(x[i], y[j])
@@ -103,8 +103,8 @@ def dtw(x, y, dist=lambda a, b: (a - b) ** 2, **kwargs):
 
     c = tmp_ac.copy()
 
-    for i in xrange(xl):
-        for j in xrange(yl):
+    for i in range(xl):
+        for j in range(yl):
             tmp_ac[i, j] += min([ac[i, j], ac[i, j + 1], ac[i + 1, j]])
 
     path = _traceback(ac)
@@ -191,8 +191,8 @@ def dtw_sw(x, y, winlen, alpha=0.5, **kwargs):
     swindow = np.hamming(winlen)
     swindow = swindow / np.sum(swindow)
 
-    for i in xrange(xl):
-        for j in xrange(yl):
+    for i in range(xl):
+        for j in range(yl):
             pad_i, pad_j = i + winlen, j + winlen
             # No window selected
             if window is None:
@@ -220,8 +220,8 @@ def dtw_sw(x, y, winlen, alpha=0.5, **kwargs):
 
     c = tmp_ac.copy()
 
-    for i in xrange(xl):
-        for j in xrange(yl):
+    for i in range(xl):
+        for j in range(yl):
             tmp_ac[i, j] += min([ac[i, j], ac[i, j + 1], ac[i + 1, j]])
 
     path = _traceback(ac)
